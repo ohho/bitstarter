@@ -2,12 +2,9 @@ var express = require('express');
 var app = express();
 app.use(express.logger());
 
-var buffer = new Buffer (100);
+var buffer = new Buffer (1000);
 
-fs.writeFile('index.html', 'buffer', function (err) {
-	if (err) throw err;
-	console.log('It\'s saved!');
-});
+buffer = fs.readFileSync('index.html');
 
 app.get('/', function(request, response) {
   response.send(buffer.toString('utf-8'));

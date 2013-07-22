@@ -4,7 +4,7 @@ app.use(express.logger());
 
 var buffer = new Buffer ('test');
 
-fs.writeFile('index.html', buffer, function (err) {
+fs.writeFile('index.html', 'buffer', function (err) {
 	if (err) throw err;
 	console.log('It\'s saved!');
 });
